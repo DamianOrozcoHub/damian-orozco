@@ -3,235 +3,509 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Salvador Damián Orozco Hernández | CV</title>
+  <meta name="description" content="Portafolio y CV de Salvador Damián Orozco Hernández - Líder Técnico y Arquitecto Backend .NET">
+  <title>CV | Damian Orozco</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary: #0f172a;
-      --secondary: #1e293b;
-      --accent: #2563eb;
-      --text: #0f172a;
-      --muted: #475569;
-      --bg: #f8fafc;
-      --card: #ffffff;
+      /* Paleta de Colores Dark Mode Profesional */
+      --bg-body: #0f1115;
+      --bg-card: #161b22;
+      --bg-card-hover: #1c2128;
+      --text-main: #f0f6fc;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff; /* Azul brillante tipo VS Code */
+      --accent-dim: rgba(88, 166, 255, 0.15);
+      --border: #30363d;
+      --gradient-hero: linear-gradient(135deg, #1f6feb 0%, #1a1f2e 100%);
     }
 
     * {
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
       line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 48px 24px;
-    }
-
-    header {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-bottom: 48px;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      margin: 0;
-      color: var(--primary);
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 16px;
-      color: var(--primary);
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 4px;
-    }
-
-    h3 {
-      margin: 0;
-      font-size: 1.1rem;
-      color: var(--secondary);
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .contact {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .section {
-      background: var(--card);
-      border-radius: 10px;
-      padding: 32px;
-      margin-bottom: 32px;
-      box-shadow: 0 10px 30px rgba(15,23,42,0.06);
-    }
-
-    ul {
-      padding-left: 18px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .job {
-      margin-bottom: 28px;
-    }
-
-    .job span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-top: 48px;
+      font-size: 16px;
     }
 
     a {
       color: var(--accent);
       text-decoration: none;
-      font-weight: 500;
+      transition: color 0.2s;
     }
 
     a:hover {
       text-decoration: underline;
+      color: #79c0ff;
+    }
+
+    /* --- Layout Principal --- */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* --- Header / Hero Section --- */
+    header {
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top right, #161b22 0%, #0f1115 100%);
+    }
+
+    .hero-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    /* Estilos para la Foto */
+    .profile-photo-container {
+      flex-shrink: 0;
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%; /* Hace la imagen redonda */
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+      background-color: #21262d; /* Color de fondo si no hay imagen */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #fff, #a5d6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text h2 {
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* --- Secciones Generales --- */
+    .section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+
+    /* --- Skills Grid --- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-hover);
+      border-color: var(--accent);
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: 1px solid rgba(88, 166, 255, 0.2);
+    }
+
+    /* --- Experiencia Timeline --- */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .job-card {
+      position: relative;
+      margin-bottom: 40px;
+      padding-left: 30px;
+    }
+
+    .job-card::before {
+      content: '';
+      position: absolute;
+      left: -25px; /* Ajuste para alinear con la linea */
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--bg-body);
+    }
+
+    .job-header {
+      margin-bottom: 10px;
+    }
+
+    .job-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .job-company {
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    .job-date {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .job-desc ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .job-desc li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+      color: #d0d7de;
+    }
+
+    .job-desc li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .project-highlight {
+      margin-top: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .project-highlight h4 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .hero-wrapper {
+        flex-direction: column-reverse; /* Foto arriba en móvil */
+        text-align: center;
+        gap: 20px;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .contact-info {
+        justify-content: center;
+      }
+      
+      .job-card::before {
+         left: -25px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <div class="container hero-wrapper">
+      <div class="hero-text">
+        <h1>Salvador Damián Orozco H.</h1>
+        <h2>Líder Técnico | Arquitecto Backend .NET | Cloud</h2>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+             <span>📍 Ciudad de México</span>
+          </div>
+          <div class="contact-item">
+            <a href="mailto:isc.damianorozco@outlook.com">✉️ isc.damianorozco@outlook.com</a>
+          </div>
+          <div class="contact-item">
+             <span>📱 55 3699 8824</span>
+          </div>
+          <div class="contact-item">
+            <a href="https://www.linkedin.com/in/damian-orozco-77142b131/" target="_blank">🔗 LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-photo-container">
+        <img src="media.jfif" alt="Damián Orozco" class="profile-photo" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'profile-photo\'>Foto</div>'">
+      </div>
+    </div>
+  </header>
+
   <div class="container">
-    <header>
-      <h1>Salvador Damián Orozco Hernández</h1>
-      <div class="subtitle">Líder Técnico / Desarrollador Backend (.NET)</div>
-      <div class="contact">
-        Ciudad de México ·
-        <a href="mailto:isc.damianorozco@outlook.com">isc.damianorozco@outlook.com</a> ·
-        55 3699 8824 ·
-        <a href="https://www.linkedin.com/in/damian-orozco-77142b131/" target="_blank">LinkedIn</a>
-      </div>
-    </header>
-
+    
     <section class="section">
-      <h2>Perfil Profesional</h2>
-      <p>
-        Líder Técnico y Desarrollador Backend con más de <strong>9 años de experiencia</strong> en el diseño,
-        desarrollo y evolución de sistemas empresariales escalables y de alto rendimiento.
-        Especializado en <strong>.NET, C#, APIs REST</strong>, arquitecturas N-capas y microservicios.
+      <h3 class="section-title">Perfil Profesional</h3>
+      <p style="color: #d0d7de; max-width: 800px;">
+        Líder Técnico y Arquitecto Backend con más de <strong>9 años de experiencia</strong> diseñando y modernizando sistemas empresariales de alto rendimiento. Especializado en el ecosistema <strong>.NET (C#), arquitecturas de microservicios y soluciones Cloud (AWS/Azure)</strong>.
       </p>
-      <p>
-        Amplia experiencia liderando equipos técnicos, definiendo arquitecturas, ejecutando migraciones tecnológicas
-        y acompañando procesos de modernización hacia entornos cloud, siempre alineado a objetivos de negocio.
+      <br>
+      <p style="color: #d0d7de; max-width: 800px;">
+        Me caracterizo por un enfoque pragmático orientado a resultados: reducción de deuda técnica, optimización de consultas SQL y escalabilidad. Experiencia liderando equipos multidisciplinarios bajo metodologías Ágiles (SCRUM), fomentando la calidad del código y la mentoría técnica.
       </p>
     </section>
 
     <section class="section">
-      <h2>Tecnologías</h2>
-      <div class="grid">
-        <div>
-          <h3>Backend</h3>
-          <ul>
-            <li>C#, .NET Framework, .NET Core / .NET</li>
-            <li>APIs REST, WCF, SOAP</li>
-            <li>Dapper, Entity Framework</li>
-          </ul>
+      <h3 class="section-title">Tecnologías y Herramientas</h3>
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <h3>Backend & Arquitectura</h3>
+          <div class="tags">
+            <span class="tag">C# .NET 8</span>
+            <span class="tag">.NET Core</span>
+            <span class="tag">Microservicios</span>
+            <span class="tag">APIs REST</span>
+            <span class="tag">WCF / SOAP</span>
+            <span class="tag">Dapper</span>
+            <span class="tag">Entity Framework</span>
+          </div>
         </div>
-        <div>
-          <h3>Bases de Datos</h3>
-          <ul>
-            <li>SQL Server, PostgreSQL, MySQL</li>
-            <li>MongoDB, DB2, BigQuery</li>
-          </ul>
-        </div>
-        <div>
+
+        <div class="skill-card">
           <h3>Cloud & DevOps</h3>
-          <ul>
-            <li>AWS, Azure, DigitalOcean</li>
-            <li>Docker, Kubernetes, AWS Lambda</li>
-            <li>Jenkins, SonarQube</li>
-          </ul>
+          <div class="tags">
+            <span class="tag">AWS Lambda</span>
+            <span class="tag">Azure</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">SonarQube</span>
+            <span class="tag">Linux / Windows Server</span>
+          </div>
         </div>
-        <div>
-          <h3>Herramientas</h3>
-          <ul>
-            <li>Git, Swagger, Postman</li>
-            <li>Visual Studio, VS Code</li>
-            <li>ChatGPT, Claude, Gemini</li>
-          </ul>
+
+        <div class="skill-card">
+          <h3>Datos</h3>
+          <div class="tags">
+            <span class="tag">SQL Server</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">Optimización SQL</span>
+          </div>
         </div>
+
+        <div class="skill-card">
+          <h3>Frontend & AI Tools</h3>
+          <div class="tags">
+            <span class="tag">Angular</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">ChatGPT</span>
+            <span class="tag">Claude</span>
+            <span class="tag">Gemini</span>
+            <span class="tag">Amazon Q</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="section">
-      <h2>Experiencia Profesional</h2>
+      <h3 class="section-title">Experiencia Laboral</h3>
+      <div class="timeline">
 
-      <div class="job">
-        <h3>Stefanini México — Líder Técnico / Arquitecto de Soluciones</h3>
-        <span>Marzo 2020 – Actualidad</span>
-        <ul>
-          <li>Liderazgo técnico de equipos multidisciplinarios en proyectos enterprise.</li>
-          <li>Definición de arquitecturas backend basadas en microservicios.</li>
-          <li>Diseño y evolución de APIs REST seguras y escalables.</li>
-          <li>Mentoría técnica y evaluación de talento.</li>
-        </ul>
-      </div>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title">Líder Técnico / Arquitecto de Soluciones</div>
+            <div class="job-company">Stefanini México</div>
+            <span class="job-date">Marzo 2020 – Actualidad</span>
+          </div>
+          <div class="job-desc">
+            <ul>
+              <li>Gestión y liderazgo de equipos (DEV, QA, BA) en proyectos de alto impacto, colaborando con PMs para estimaciones y alcance.</li>
+              <li>Definición de arquitecturas backend escalables, code reviews y mentoría técnica a desarrolladores.</li>
+              <li>Responsable de investigación y validación de nuevas soluciones tecnológicas.</li>
+            </ul>
+            
+            <div class="project-highlight">
+              <h4>🏆 Proyectos Destacados:</h4>
+              <ul style="font-size: 0.9rem; margin-top: 5px;">
+                <li><strong>Walmart (Never Be Beat / Sam’s):</strong> Líder de Innovación. Integración de nuevos equipos y definición de lineamientos técnicos .NET Core/Azure.</li>
+                <li><strong>BASF (Agroplan):</strong> Arquitectura de Nube y microservicios. Automatización de reportes operativos y CI/CD con Jenkins.</li>
+                <li><strong>Banorte (PePer):</strong> Mentoría técnica y arquitectura para soluciones en la nube.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-      <div class="job">
-        <h3>HLS Group — Desarrollador Backend Senior / Analista</h3>
-        <span>Septiembre 2025 – Diciembre 2025</span>
-        <ul>
-          <li>Procesos ETL y sincronización entre múltiples motores de BD.</li>
-          <li>Migración de Windows Services a AWS Lambda.</li>
-          <li>Actualización tecnológica a .NET 8.</li>
-        </ul>
-      </div>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title">Desarrollador Backend Sr / Analista</div>
+            <div class="job-company">HLS Group (Proyecto Aeroméxico - AMX SAFE)</div>
+            <span class="job-date">Septiembre 2025 – Diciembre 2025</span>
+          </div>
+          <div class="job-desc">
+            <ul>
+              <li>Modernización de sistema legado: Migración de aplicaciones <strong>.NET Framework a .NET 8</strong>.</li>
+              <li>Transición de Windows Services a arquitectura Serverless con <strong>AWS Lambda</strong>.</li>
+              <li>Optimización de procesos ETL y sincronización de datos entre PostgreSQL, Oracle y SQL Server.</li>
+              <li>Automatización de despliegues (AWS CLI) en entornos híbridos (Windows/Linux).</li>
+            </ul>
+          </div>
+        </div>
 
-      <div class="job">
-        <h3>EON Igniting Business — Líder Técnico / Arquitecto</h3>
-        <span>Enero 2016 – Marzo 2020</span>
-        <ul>
-          <li>Diseño y desarrollo de plataformas empresariales.</li>
-          <li>Coordinación de equipos y liderazgo técnico.</li>
-          <li>Integración de servicios WCF y REST.</li>
-        </ul>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title">Líder Técnico / Arquitecto de Software</div>
+            <div class="job-company">EON Igniting Business</div>
+            <span class="job-date">Enero 2016 – Marzo 2020</span>
+          </div>
+          <div class="job-desc">
+            <ul>
+              <li>Evolución de Desarrollador Web a Líder Técnico, coordinando equipos para clientes de RRHH y Financieros.</li>
+              <li>Diseño de arquitecturas Fullstack (.NET + Angular) e integraciones WCF/REST.</li>
+            </ul>
+            <div class="project-highlight">
+              <h4>🏆 Proyectos Destacados:</h4>
+              <ul style="font-size: 0.9rem; margin-top: 5px;">
+                <li><strong>Red-Ring (WantYou / Kiosco):</strong> Liderazgo técnico desde la concepción hasta producción.</li>
+                <li><strong>Si Vale (HUB):</strong> Interacción backend Java y Frontend Angular en Linux.</li>
+                <li><strong>PagaTodo (Mi Beca para Empezar):</strong> Mantenimiento y nuevas funcionalidades en .NET MVC.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="section">
-      <h2>Formación</h2>
-      <ul>
-        <li><strong>Ingeniería en Sistemas Computacionales</strong> — UNIREM (2013–2015)</li>
-        <li>Certificación DBA PostgreSQL — Mexico First</li>
-        <li>DevOps Integral — Udemy (en curso)</li>
-        <li>Jenkins de Cero a Experto — Udemy (en curso)</li>
-      </ul>
+      <h3 class="section-title">Formación Académica & Certificaciones</h3>
+      <div class="skills-grid">
+        <div class="skill-card" style="border-left: 4px solid var(--accent);">
+          <h4 style="color:white; font-weight:600;">Ingeniería en Sistemas Computacionales</h4>
+          <p style="color:var(--text-secondary); font-size:0.9rem;">Universidad de la República Mexicana (UNIREM) | 2012 - 2015</p>
+        </div>
+        
+        <div class="skill-card">
+          <h4 style="color:white; font-weight:600;">Certificaciones</h4>
+          <ul style="margin-top:10px; padding-left:20px; color: #d0d7de; font-size: 0.9rem;">
+            <li>DBA PostgreSQL (Mexico First)</li>
+            <li>DevOps Integral (En curso)</li>
+            <li>Jenkins de Cero a Experto (En curso)</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <footer>
-      © 2026 · Salvador Damián Orozco Hernández
+      <p>© 2026 | Salvador Damián Orozco Hernández</p>
+      <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+        Desarrollo de Software • Arquitectura de Software • Liderazgo Técnico • Innovación
+      </p>
     </footer>
+
   </div>
+
 </body>
 </html>
